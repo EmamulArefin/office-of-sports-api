@@ -21,12 +21,12 @@ async function bootstrap() {
       resave: false,
       saveUninitialized: false,
       cookie: {
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        secure: true,
+        sameSite: 'none',
       },
     }),
   );
 
-  await app.listen(process.env.PORT || 10000);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
